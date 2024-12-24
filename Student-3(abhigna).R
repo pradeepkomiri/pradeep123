@@ -20,7 +20,7 @@ library(MASS)
 
 ggplot(Shopping_data, aes(x = AnnualIncome, y = SpendingScore)) +
   geom_point() +  
-  geom_smooth(method = "lm", color = "blue", se = FALSE) +  # linear trendline
+  geom_smooth(method = "lm", color = "blue", se = FALSE) +  
   labs(title = "Scatterplot of Annual Income vs Spending Score",
        x = "Annual Income (in USD)",
        y = "Spending Score") +
@@ -28,7 +28,6 @@ ggplot(Shopping_data, aes(x = AnnualIncome, y = SpendingScore)) +
 
 # Question-1(B):
 
-# Histogram of Spending Score with Normal Curve Overlay
 ggplot(Shopping_data, aes(x = SpendingScore)) +
   geom_histogram(aes(y = ..density..), bins = 10, fill = "lightblue", color = "black", alpha = 0.7) +
   stat_function(fun = dnorm, args = list(mean = mean(Shopping_data$SpendingScore), sd = sd(Shopping_data$SpendingScore)),
@@ -41,7 +40,6 @@ ggplot(Shopping_data, aes(x = SpendingScore)) +
 
 # Question-2(A):
 
-# Load required library
 library(ggplot2)
 
 # Boxplot of Spending Score by Annual Income categories
@@ -68,7 +66,6 @@ ggplot(Shopping_data, aes(x = SpendingScore)) +
 
 # Question-3:
 
-# Load required library
 library(ggplot2)
 library(dplyr)
 
