@@ -69,13 +69,11 @@ ggplot(Shopping_data, aes(x = SpendingScore)) +
 library(ggplot2)
 library(dplyr)
 
-# Create a new variable to categorize SpendingScore into categories (Low, Medium, High)
 Shopping_data$SpendingScoreCategory <- cut(Shopping_data$SpendingScore, 
                                            breaks = c(0, 33, 66, 100), 
                                            labels = c("Low", "Medium", "High"),
                                            right = FALSE)
 
-# Normalize data for a fair comparison (convert to percentage)
 normalized_data <- Shopping_data %>%
   group_by(AnnualIncome, SpendingScoreCategory) %>%
   summarise(count = n()) %>%
