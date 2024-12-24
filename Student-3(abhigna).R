@@ -12,16 +12,14 @@ install.packages("ggplot2")
 
 install.packages("dplyr")
 
-# Load required libraries 
 library(ggplot2)
 library(MASS)
 
 
 # Question-1(A):
 
-# Scatterplot with Linear Trendline
 ggplot(Shopping_data, aes(x = AnnualIncome, y = SpendingScore)) +
-  geom_point() +  # scatter plot
+  geom_point() +  
   geom_smooth(method = "lm", color = "blue", se = FALSE) +  # linear trendline
   labs(title = "Scatterplot of Annual Income vs Spending Score",
        x = "Annual Income (in USD)",
